@@ -1,293 +1,91 @@
-🌾 Hybrid Crop Prediction System
+<h1 align="center">🌾 Hybrid Crop Prediction System</h1>
 
-AI-Powered Crop Recommendation using XGBoost, Deep Neural Network (MLP), Live Weather API & SHAP Explainability
+<p align="center">
+AI-Powered Crop Recommendation using XGBoost, Neural Networks, Flask & Explainable AI
+</p>
 
-📌 Overview
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
+<img src="https://img.shields.io/badge/XGBoost-FF6F00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Machine_Learning-102230?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/SHAP_Explainability-0A66C2?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+</p>
 
-The Hybrid Crop Prediction System is a full-stack machine-learning application that recommends the most suitable crop based on:
+---
 
-Soil nutrients (N, P, K)
+## 📌 Overview
 
-pH value
+The Hybrid Crop Prediction System is a machine learning-based web application designed to recommend the most suitable crop using soil nutrients, environmental conditions, and live weather data.
 
-Temperature
+The system combines:
+- XGBoost Classifier
+- Deep Neural Network (MLPClassifier)
 
-Humidity
+to improve prediction performance and reliability.
 
-Rainfall
+To enhance transparency and interpretability, the project also integrates SHAP Explainability for feature-level analysis and model insights.
 
-Live weather data fetched automatically from the Open-Meteo API
+The application includes an interactive dashboard where users can either:
+- manually enter agricultural parameters
+- fetch live weather data automatically using the Open-Meteo API
 
-The system uses a hybrid modelling approach combining:
+---
 
-XGBoost Classifier
+## 🚀 Features
 
-Deep Neural Network (MLPClassifier)
+✅ Hybrid Machine Learning Models  
+✅ Crop Recommendation System  
+✅ Live Weather API Integration  
+✅ SHAP Explainability Visualizations  
+✅ Interactive Dashboard UI  
+✅ Real-Time Prediction Results  
+✅ Confidence Score Display  
+✅ Manual & Auto Weather Input Modes  
 
-To increase transparency, the system also includes:
+---
 
-SHAP Explainability
+## 🛠️ Tech Stack
 
-Feature-wise impact visualization (positive/negative influence on prediction)
+### Backend & Machine Learning
+- Python
+- Flask
+- Scikit-learn
+- XGBoost
+- SHAP
+- Pandas
+- NumPy
 
-Model accuracy display
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
 
-The front-end is an elegant interactive dashboard allowing users to enter values manually or fetch live weather data by city.
+### APIs
+- Open-Meteo Geocoding API
+- Open-Meteo Weather Forecast API
 
-🚀 Features
-🔮 Machine Learning
+---
 
-XGBoost & MLP models trained on the Crop Recommendation Dataset
+## 📂 Project Structure
 
-StandardScaler for feature normalization
+```bash
+Crop-Prediction-System/
+│── app_flask.py
+│── exe.py
+│── harCode.py
+│── index.html
+│── Crop_recommendation-1.csv
+│── screenshots/
+│── README.md
+---
+## 👩‍💻 Author
 
-LabelEncoder for multi-class crop labels
+### Harshitha Mekala
 
-Train/test split with accuracy reporting
+Recent Computer Science Graduate passionate about Python, SQL, Power BI, Machine Learning, and Data Analytics.
 
-SHAP explainers for feature impact analysis
-
-🌤 Live Weather Integration
-
-City-based weather fetching using:
-
-Open-Meteo Geocoding API
-
-Open-Meteo Forecast API
-
-Automatically retrieves:
-✔ Temperature
-✔ Relative humidity
-✔ Rainfall estimate
-
-📊 Explainable AI
-
-SHAP values extracted for each model
-
-Feature-level analysis rendered as dynamic charts
-
-Shows how each feature pushes the model toward or away from the predicted crop
-
-💻 Front-End UI
-
-Two input modes:
-✔ Weather Fetch Mode
-✔ Manual Entry Mode
-
-Animated cards, tabs, alerts, loaders, and responsive design
-
-Real-time prediction results with SHAP bar charts
-
-🧩 Backend API (Flask)
-
-/ — main UI
-
-/fetch_weather — fetch live weather
-
-/predict — predict crop using both models
-
-🏗 Project Structure
-📁 Crop-Prediction-System/
-│
-├── app_flask.py               # Main Flask application
-├── exe.py                     # Alternate Flask runner (same functionality)
-├── harCode.py                 # ML training, SHAP logics, weather API calls
-├── index.html                 # Complete front-end UI
-├── Crop_recommendation-1.csv  # Dataset used for model training
-└── harCode.cpython-313.pyc    # Compiled Python file (ignored)
-
-📦 Technologies Used
-Backend / ML
-
-Python
-
-Flask
-
-Pandas, NumPy
-
-Scikit-learn
-
-XGBoost
-
-SHAP
-
-Requests
-
-Frontend
-
-HTML5, CSS3
-
-JavaScript (Vanilla)
-
-Animated UI components
-
-External APIs
-
-Open-Meteo Geocoding API
-
-Open-Meteo Weather Forecast API
-
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone <repo-url>
-cd Crop-Prediction-System
-
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-
-(If you don’t have a requirements.txt, create one using the list below):
-
-flask
-pandas
-numpy
-scikit-learn
-xgboost
-shap
-requests
-
-3️⃣ Run the Application
-python app_flask.py
-
-4️⃣ Open in Browser
-http://127.0.0.1:5000/
-
-📁 Dataset Description
-
-The project uses Crop_recommendation-1.csv, which contains:
-
-Feature	Description
-N	Nitrogen content (mg/kg)
-P	Phosphorus content (mg/kg)
-K	Potassium content (mg/kg)
-temperature	Air temperature in °C
-humidity	Relative humidity (%)
-ph	Soil pH (0–14)
-rainfall	Rainfall in mm
-label	Recommended crop
-🤖 Machine Learning Workflow
-1. Data Preprocessing
-
-Load CSV
-
-Split into features (X) and labels (y)
-
-Encode labels
-
-Normalize features
-
-2. Model Training
-⭐ XGBoost
-
-100 estimators
-
-Trained on scaled features
-
-Uses Tree SHAP explainer
-
-🧠 MLP (Neural Network)
-
-2 hidden layers (64, 32)
-
-Max iter: 300
-
-KernelExplainer for SHAP
-
-3. Prediction
-
-User input → scaled → fed into both models
-
-Outputs: crop, confidence score
-
-SHAP values generated
-
-🌈 Front-End UI Highlights
-Weather Tab
-
-Enter city → fetch live weather
-
-Auto-fill temp/humidity/rainfall
-
-Combine with soil nutrients
-
-Manual Tab
-
-Enter all parameters manually
-
-Results Section
-
-XGBoost & MLP predictions side-by-side
-
-Confidence score
-
-SHAP bar graphs for:
-
-Positive impact (green)
-
-Negative impact (red)
-
-🛠 API Endpoints
-POST /fetch_weather
-
-Request:
-
-{
-  "location": "Hyderabad"
-}
-
-
-Response:
-
-{
-  "success": true,
-  "temperature": 28.5,
-  "humidity": 40,
-  "rainfall": 64.0
-}
-
-POST /predict
-
-Request:
-
-{
-  "N": 50,
-  "P": 40,
-  "K": 35,
-  "temperature": 25,
-  "humidity": 60,
-  "ph": 6.5,
-  "rainfall": 120
-}
-
-
-Response:
-
-{
-  "success": true,
-  "xgboost": { "crop": "rice", "confidence": 89.3, "shap": [...] },
-  "mlp": { "crop": "rice", "confidence": 81.5, "shap": [...] }
-}
-
-📊 SHAP Explainability
-
-The system explains "why" a crop was recommended:
-
-Each feature gets a SHAP value
-
-Positive SHAP → pushes prediction towards crop
-
-Negative SHAP → pushes prediction away
-
-Values normalized and displayed visually
-
-This promotes trust, transparency, and interpretability.
-
-📘 Future Enhancements
-
-Add rainfall & soil data via government APIs
-
-Add RandomForest/SVM for comparison
-
-Deploy using Docker / Render / HuggingFace Spaces
-
-Add user login & prediction history
+🔗 GitHub: https://github.com/Harshitha152  
+🔗 LinkedIn: https://www.linkedin.com/in/harshitha-mekala15
